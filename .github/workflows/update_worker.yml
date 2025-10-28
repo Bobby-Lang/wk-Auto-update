@@ -15,7 +15,7 @@ on:
           - 'prerelease'
 
 env:
-  CLOUDFLARE_PROJECT: "vless-Oir"  # 你的 Cloudflare Pages 项目名
+  CLOUDFLARE_PROJECT: "bpb-panel"  # 你的 Cloudflare Pages 项目名
 
 jobs:
   update:
