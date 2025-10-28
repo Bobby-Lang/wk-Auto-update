@@ -128,15 +128,16 @@ jobs:
           git push
 
       # 🔥 新增的关键步骤：触发 Cloudflare Pages 部署
-      - name: 触发 Cloudflare Pages 部署
-        if: env.need_update == 'true'
-        env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: |
-          echo "🚀 触发 Cloudflare Pages 重新部署..."
-          echo "项目: $CLOUDFLARE_PROJECT"
-          echo "账户ID: $CLOUDFLARE_ACCOUNT_ID"
+    #  - name: 触发 Cloudflare Pages 部署
+       # if: env.need_update == 'true'
+        #env:
+        #  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+         # CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+       # run: |
+         # echo "🚀 触发 Cloudflare Pages 重新部署..."
+         # echo "项目: $CLOUDFLARE_PROJECT"
+         # echo "账户ID: $CLOUDFLARE_ACCOUNT_ID"
+          
           
           response=$(curl -X POST \
             "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/$CLOUDFLARE_PROJECT/deployments" \
